@@ -1,0 +1,123 @@
+ <style>
+        @layer utilities {
+            @keyframes scroll {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .animate-scroll {
+                animation: scroll 5s linear infinite;
+            }
+
+            .animate-scroll:hover {
+                animation-play-state: paused;
+            }
+        }
+    </style>
+    <section class="relative py-20 bg-[#050816] overflow-hidden text-white">
+
+        <!-- Glow Background -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full"></div>
+
+        <!-- Heading -->
+        <div class="text-center mb-16 relative">
+            <h2 class="text-4xl md:text-5xl font-bold">
+                Student <span class="text-cyan-400">Testimonials</span>
+            </h2>
+            <p class="text-gray-400 mt-3">
+                Real feedback from real students
+            </p>
+        </div>
+
+        <!-- Slider Wrapper -->
+        <div class="relative overflow-hidden">
+            <div id="testimonialTrack" class="flex gap-8 px-6 w-max animate-scroll">
+
+                <!-- CARD -->
+                <div class="tilt-card group w-[320px] md:w-[360px]
+                        bg-white/10 backdrop-blur-xl
+                        border border-white/20 rounded-3xl p-6
+                        transition-shadow duration-500
+                        shadow-[0_0_30px_rgba(0,255,255,0.1)]">
+
+                    <div class="absolute inset-0 rounded-3xl
+                           bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500
+                           opacity-0 group-hover:opacity-20 blur-xl transition">
+                    </div>
+
+                    <div class="relative flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/100?img=32"
+                            class="w-14 h-14 rounded-full border-2 border-cyan-400">
+                        <div>
+                            <h3 class="font-semibold">Rukhsar Khan</h3>
+                            <p class="text-sm text-gray-400">C# Student</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-yellow-400">★★★★★</div>
+
+                    <p class="mt-4 text-gray-300 text-sm">
+                        Concepts were explained clearly with real examples.
+                        The learning experience was amazing.
+                    </p>
+                </div>
+
+                <!-- CARD -->
+                <div class="tilt-card group w-[320px] md:w-[360px]
+                        bg-white/10 backdrop-blur-xl
+                        border border-white/20 rounded-3xl p-6
+                        transition-shadow duration-500
+                        shadow-[0_0_30px_rgba(139,92,246,0.2)]">
+
+                    <div class="absolute inset-0 rounded-3xl
+                           bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400
+                           opacity-0 group-hover:opacity-20 blur-xl transition">
+                    </div>
+
+                    <div class="relative flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/100?img=47"
+                            class="w-14 h-14 rounded-full border-2 border-cyan-400">
+                        <div>
+                            <h3 class="font-semibold">Krishna Prajapati</h3>
+                            <p class="text-sm text-gray-400">Graphic Design</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-yellow-400">★★★★★</div>
+
+                    <p class="mt-4 text-gray-300 text-sm">
+                        Learned Photoshop, Illustrator & real-world project workflow.
+                    </p>
+                </div>
+
+                <!-- DUPLICATE CARDS FOR INFINITE LOOP -->
+                <!-- copy same cards again -->
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const rotateX = ((y / rect.height) - 0.5) * -12;
+                const rotateY = ((x / rect.width) - 0.5) * 12;
+
+                card.style.transform =
+                    `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform =
+                    'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
