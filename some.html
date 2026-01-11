@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #00f5ff #0a0a0f;
+    }
+    
+    *::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    *::-webkit-scrollbar-track {
+      background: #0a0a0f;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #00f5ff, #bf00ff);
+      border-radius: 3px;
+    }
+
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .font-rajdhani {
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .glass {
+      background: rgba(15, 15, 25, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 245, 255, 0.1);
+    }
+
+    .glass-card {
+      background: rgba(20, 20, 35, 0.6);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(0, 245, 255, 0.15);
+    }
+
+    .neon-text {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+
+    .neon-border {
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.3), inset 0 0 15px rgba(0, 245, 255, 0.1);
+    }
+
+    .neon-glow {
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 40px rgba(0, 245, 255, 0.2);
+    }
+
+    .magenta-glow {
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.4), 0 0 40px rgba(191, 0, 255, 0.2);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #00f5ff, #bf00ff, #ff006e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-neon {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-neon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-neon:hover::before {
+      left: 100%;
+    }
+
+    .btn-neon:hover {
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.6), 0 0 60px rgba(0, 245, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .skill-bar {
+      background: linear-gradient(90deg, #00f5ff, #bf00ff);
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+    }
+
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(0, 245, 255, 0.8), 0 0 60px rgba(191, 0, 255, 0.4); }
+    }
+
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00f5ff, #bf00ff);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 10px #00f5ff;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .testimonial-card {
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.02);
+      border-color: rgba(191, 0, 255, 0.5);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00f5ff;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    }
+
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.3;
+    }
+  </style>
+  <style>
+    @view-transition { navigation: auto; }
+   
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-[#0a0a0f] text-white font-rajdhani overflow-auto">
+  <div id="app-wrapper" class="w-full h-full overflow-auto grid-bg"><!-- Navigation -->
+   <nav class="glass fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between"><!-- Logo -->
+     <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center neon-glow">
+       <svg class="w-6 h-6 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2" /> <polyline points="2 17 12 22 22 17" /> <polyline points="2 12 12 17 22 12" />
+       </svg>
+      </div><span id="logo-text" class="font-orbitron text-xl font-bold gradient-text">DEVELOPER</span>
+     </div><!-- Center Links -->
+     <div class="hidden md:flex items-center gap-8"><a href="#home" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Home</a> <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Skills</a> <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Projects</a> <a href="#testimonials" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Testimonials</a> <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
+     </div><!-- Hire Button --> <a href="#contact" class="btn-neon px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-orbitron text-sm font-semibold tracking-wider"> HIRE ME </a>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden"><!-- Background Shapes -->
+    <div class="hero-shape w-96 h-96 bg-cyan-500 top-20 -left-48"></div>
+    <div class="hero-shape w-80 h-80 bg-purple-600 bottom-20 -right-40"></div>
+    <div class="hero-shape w-64 h-64 bg-pink-500 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+     <div class="floating mb-8">
+      <div class="w-40 h-40 mx-auto rounded-full glass-card neon-border flex items-center justify-center">
+       <svg class="w-20 h-20 text-cyan-400" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4" /> <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+       </svg>
+      </div>
+     </div>
+     <p class="text-cyan-400 font-orbitron text-lg mb-4 tracking-widest">WELCOME TO MY PORTFOLIO</p>
+     <h1 id="hero-title" class="font-orbitron text-5xl md:text-7xl font-black mb-6 gradient-text leading-tight">CREATIVE DEVELOPER</h1>
+     <p id="hero-subtitle" class="text-2xl md:text-3xl text-gray-300 mb-6 font-light">Full Stack Developer &amp; UI/UX Designer</p>
+     <p id="hero-description" class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Crafting digital experiences that blend stunning visuals with powerful functionality. Let's build something extraordinary together.</p>
+     <div class="flex flex-wrap gap-4 justify-center"><a href="#projects" class="btn-neon px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-orbitron font-bold tracking-wider"> VIEW PROJECTS </a> <a href="#contact" class="px-8 py-4 rounded-full border-2 border-cyan-400 text-cyan-400 font-orbitron font-bold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"> GET IN TOUCH </a>
+     </div><!-- Scroll Indicator -->
+     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <div class="w-6 h-10 rounded-full border-2 border-cyan-400 flex justify-center p-2">
+       <div class="w-1 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <p class="text-cyan-400 font-orbitron text-sm tracking-widest mb-4">WHAT I DO</p>
+      <h2 id="skills-title" class="font-orbitron text-4xl md:text-5xl font-bold gradient-text">MY SKILLS</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Skill Cards -->
+      <div class="glass-card rounded-2xl p-8 neon-border">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
+         <svg class="w-7 h-7 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6" /> <polyline points="8 6 2 12 8 18" />
+         </svg>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white">Frontend Development</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">React / Next.js</span> <span class="text-cyan-400">95%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 95%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">TypeScript</span> <span class="text-cyan-400">90%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 90%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Tailwind CSS</span> <span class="text-cyan-400">92%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 92%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 neon-border">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center magenta-glow">
+         <svg class="w-7 h-7 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> <path d="M9 21V9" />
+         </svg>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white">Backend Development</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Node.js / Express</span> <span class="text-purple-400">88%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 88%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Python / Django</span> <span class="text-purple-400">85%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">PostgreSQL / MongoDB</span> <span class="text-purple-400">87%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 87%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 neon-border">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+         <svg class="w-7 h-7 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /> <path d="M8 14s1.5 2 4 2 4-2 4-2" /> <line x1="9" y1="9" x2="9.01" y2="9" /> <line x1="15" y1="9" x2="15.01" y2="9" />
+         </svg>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white">UI/UX Design</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Figma</span> <span class="text-pink-400">93%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 93%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Adobe XD</span> <span class="text-pink-400">85%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Prototyping</span> <span class="text-pink-400">90%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 90%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 neon-border">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+         <svg class="w-7 h-7 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z" /> <path d="M2 17l10 5 10-5" /> <path d="M2 12l10 5 10-5" />
+         </svg>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white">DevOps &amp; Tools</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Docker / Kubernetes</span> <span class="text-green-400">82%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 82%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">AWS / GCP</span> <span class="text-green-400">78%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 78%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-300">Git / CI/CD</span> <span class="text-green-400">91%</span>
+         </div>
+         <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 91%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="py-24 px-6 relative">
+    <div class="hero-shape w-72 h-72 bg-purple-600 -top-20 -right-36"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+     <div class="text-center mb-16">
+      <p class="text-purple-400 font-orbitron text-sm tracking-widest mb-4">PORTFOLIO</p>
+      <h2 id="projects-title" class="font-orbitron text-4xl md:text-5xl font-bold gradient-text">FEATURED PROJECTS</h2>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
+      <div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-500">
+       <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent"></div>
+        <svg class="w-20 h-20 text-cyan-400 relative z-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" /> <line x1="8" y1="21" x2="16" y2="21" /> <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <div class="flex gap-2 mb-3"><span class="px-3 py-1 text-xs rounded-full bg-cyan-500/20 text-cyan-400 font-orbitron">React</span> <span class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-400 font-orbitron">Node.js</span>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white mb-2">E-Commerce Platform</h3>
+        <p class="text-gray-400 text-sm mb-4">Full-stack e-commerce solution with real-time inventory and payment processing.</p><a href="#" class="text-cyan-400 font-orbitron text-sm flex items-center gap-2 hover:text-cyan-300 transition-colors"> View Project 
+         <svg class="w-4 h-4" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" />
+         </svg></a>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-500">
+       <div class="h-48 bg-gradient-to-br from-purple-500/20 to-pink-600/20 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent"></div>
+        <svg class="w-20 h-20 text-purple-400 relative z-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <div class="flex gap-2 mb-3"><span class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-400 font-orbitron">Next.js</span> <span class="px-3 py-1 text-xs rounded-full bg-pink-500/20 text-pink-400 font-orbitron">Socket.io</span>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white mb-2">Real-Time Chat App</h3>
+        <p class="text-gray-400 text-sm mb-4">Secure messaging platform with end-to-end encryption and video calling.</p><a href="#" class="text-purple-400 font-orbitron text-sm flex items-center gap-2 hover:text-purple-300 transition-colors"> View Project 
+         <svg class="w-4 h-4" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" />
+         </svg></a>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-500">
+       <div class="h-48 bg-gradient-to-br from-pink-500/20 to-rose-600/20 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent"></div>
+        <svg class="w-20 h-20 text-pink-400 relative z-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z" /> <path d="M2 17l10 5 10-5" /> <path d="M2 12l10 5 10-5" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <div class="flex gap-2 mb-3"><span class="px-3 py-1 text-xs rounded-full bg-pink-500/20 text-pink-400 font-orbitron">Python</span> <span class="px-3 py-1 text-xs rounded-full bg-rose-500/20 text-rose-400 font-orbitron">TensorFlow</span>
+        </div>
+        <h3 class="font-orbitron text-xl font-bold text-white mb-2">AI Dashboard</h3>
+        <p class="text-gray-400 text-sm mb-4">Machine learning analytics dashboard with predictive modeling capabilities.</p><a href="#" class="text-pink-400 font-orbitron text-sm flex items-center gap-2 hover:text-pink-300 transition-colors"> View Project 
+         <svg class="w-4 h-4" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Testimonials Section -->
+   <section id="testimonials" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <p class="text-pink-400 font-orbitron text-sm tracking-widest mb-4">TESTIMONIALS</p>
+      <h2 id="testimonials-title" class="font-orbitron text-4xl md:text-5xl font-bold gradient-text">CLIENT REVIEWS</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Testimonial 1 -->
+      <div class="testimonial-card glass-card rounded-2xl p-8 neon-border">
+       <div class="flex gap-1 mb-4">
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+       </div>
+       <p class="text-gray-300 mb-6 leading-relaxed">"Exceptional work! Delivered a stunning website that exceeded all our expectations. The attention to detail and creativity is remarkable."</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center font-orbitron font-bold text-white">
+         SM
+        </div>
+        <div>
+         <h4 class="font-orbitron font-bold text-white">Sarah Mitchell</h4>
+         <p class="text-gray-500 text-sm">CEO, TechStart</p>
+        </div>
+       </div>
+      </div><!-- Testimonial 2 -->
+      <div class="testimonial-card glass-card rounded-2xl p-8 neon-border">
+       <div class="flex gap-1 mb-4">
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+       </div>
+       <p class="text-gray-300 mb-6 leading-relaxed">"A true professional who understands both design and development. Our app performance improved by 40% after their optimization work."</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-orbitron font-bold text-white">
+         JR
+        </div>
+        <div>
+         <h4 class="font-orbitron font-bold text-white">James Rodriguez</h4>
+         <p class="text-gray-500 text-sm">CTO, InnovateLabs</p>
+        </div>
+       </div>
+      </div><!-- Testimonial 3 -->
+      <div class="testimonial-card glass-card rounded-2xl p-8 neon-border">
+       <div class="flex gap-1 mb-4">
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <svg class="w-5 h-5 text-yellow-400" viewbox="0 0 24 24" fill="currentColor">
+         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+       </div>
+       <p class="text-gray-300 mb-6 leading-relaxed">"Incredible communication and technical skills. They transformed our outdated platform into a modern, user-friendly experience."</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center font-orbitron font-bold text-white">
+         EC
+        </div>
+        <div>
+         <h4 class="font-orbitron font-bold text-white">Emily Chen</h4>
+         <p class="text-gray-500 text-sm">Founder, DesignCraft</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-24 px-6 relative">
+    <div class="hero-shape w-80 h-80 bg-cyan-500 -bottom-40 -left-40"></div>
+    <div class="max-w-4xl mx-auto relative z-10">
+     <div class="text-center mb-16">
+      <p class="text-cyan-400 font-orbitron text-sm tracking-widest mb-4">GET IN TOUCH</p>
+      <h2 id="contact-title" class="font-orbitron text-4xl md:text-5xl font-bold gradient-text mb-4">LET'S WORK TOGETHER</h2>
+      <p id="contact-description" class="text-gray-400 text-lg max-w-2xl mx-auto">Have a project in mind? Let's create something amazing together. I'm always open to discussing new opportunities.</p>
+     </div>
+     <div class="glass-card rounded-3xl p-8 md:p-12 neon-border">
+      <form id="contact-form" class="space-y-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div><label for="name" class="block text-gray-300 font-medium mb-2">Your Name</label> <input type="text" id="name" name="name" placeholder="John Doe" class="w-full px-5 py-4 rounded-xl bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 transition-all duration-300 focus:border-cyan-400">
+        </div>
+        <div><label for="email" class="block text-gray-300 font-medium mb-2">Your Email</label> <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full px-5 py-4 rounded-xl bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 transition-all duration-300 focus:border-cyan-400">
+        </div>
+       </div>
+       <div><label for="subject" class="block text-gray-300 font-medium mb-2">Subject</label> <input type="text" id="subject" name="subject" placeholder="Project Inquiry" class="w-full px-5 py-4 rounded-xl bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 transition-all duration-300 focus:border-cyan-400">
+       </div>
+       <div><label for="message" class="block text-gray-300 font-medium mb-2">Message</label> <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." class="w-full px-5 py-4 rounded-xl bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 transition-all duration-300 focus:border-cyan-400 resize-none"></textarea>
+       </div><button type="submit" class="btn-neon w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-orbitron font-bold text-lg tracking-wider"> SEND MESSAGE </button>
+      </form>
+      <div id="form-success" class="hidden text-center py-8">
+       <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center pulse-glow">
+        <svg class="w-10 h-10 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12" />
+        </svg>
+       </div>
+       <h3 class="font-orbitron text-2xl font-bold gradient-text mb-2">Message Sent!</h3>
+       <p class="text-gray-400">Thank you for reaching out. I'll get back to you soon!</p>
+      </div>
+     </div><!-- Social Links -->
+     <div class="flex justify-center gap-6 mt-12"><a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+       </svg></a> <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-400 transition-all duration-300">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+       </svg></a> <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-pink-400 hover:border-pink-400 transition-all duration-300">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+       </svg></a> <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-6 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-gray-500 font-rajdhani">© 2024 <span class="gradient-text font-orbitron">DEVELOPER</span>. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      logo_text: 'DEVELOPER',
+      hero_title: 'CREATIVE DEVELOPER',
+      hero_subtitle: 'Full Stack Developer & UI/UX Designer',
+      hero_description: 'Crafting digital experiences that blend stunning visuals with powerful functionality. Let\'s build something extraordinary together.',
+      skills_title: 'MY SKILLS',
+      projects_title: 'FEATURED PROJECTS',
+      testimonials_title: 'CLIENT REVIEWS',
+      contact_title: 'LET\'S WORK TOGETHER',
+      contact_description: 'Have a project in mind? Let\'s create something amazing together. I\'m always open to discussing new opportunities.',
+      background_color: '#0a0a0f',
+      card_color: '#14142380',
+      text_color: '#ffffff',
+      primary_accent: '#00f5ff',
+      secondary_accent: '#bf00ff',
+      font_family: 'Rajdhani',
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      document.getElementById('logo-text').textContent = config.logo_text || defaultConfig.logo_text;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('skills-title').textContent = config.skills_title || defaultConfig.skills_title;
+      document.getElementById('projects-title').textContent = config.projects_title || defaultConfig.projects_title;
+      document.getElementById('testimonials-title').textContent = config.testimonials_title || defaultConfig.testimonials_title;
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('contact-description').textContent = config.contact_description || defaultConfig.contact_description;
+
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryAccent = config.primary_accent || defaultConfig.primary_accent;
+      const secondaryAccent = config.secondary_accent || defaultConfig.secondary_accent;
+      const cardColor = config.card_color || defaultConfig.card_color;
+
+      document.body.style.backgroundColor = bgColor;
+      document.body.style.color = textColor;
+
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontFamily = `${fontFamily}, Rajdhani, sans-serif`;
+      document.body.style.fontSize = `${baseSize}px`;
+
+      document.querySelectorAll('.font-orbitron').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, Orbitron, sans-serif`;
+      });
+
+      document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${baseSize * 3}px`);
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${baseSize * 2.5}px`);
+      document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${baseSize * 1.25}px`);
+      document.querySelectorAll('p').forEach(el => {
+        if (!el.classList.contains('text-sm') && !el.classList.contains('text-xs')) {
+          el.style.fontSize = `${baseSize}px`;
+        }
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => {
+              config.card_color = value;
+              window.elementSdk.setConfig({ card_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_accent || defaultConfig.primary_accent,
+            set: (value) => {
+              config.primary_accent = value;
+              window.elementSdk.setConfig({ primary_accent: value });
+            }
+          },
+          {
+            get: () => config.secondary_accent || defaultConfig.secondary_accent,
+            set: (value) => {
+              config.secondary_accent = value;
+              window.elementSdk.setConfig({ secondary_accent: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['logo_text', config.logo_text || defaultConfig.logo_text],
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['hero_description', config.hero_description || defaultConfig.hero_description],
+        ['skills_title', config.skills_title || defaultConfig.skills_title],
+        ['projects_title', config.projects_title || defaultConfig.projects_title],
+        ['testimonials_title', config.testimonials_title || defaultConfig.testimonials_title],
+        ['contact_title', config.contact_title || defaultConfig.contact_title],
+        ['contact_description', config.contact_description || defaultConfig.contact_description]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Contact form handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('form-success').classList.remove('hidden');
+    });
+
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bb3b4be00103b7f',t:'MTc2Nzk1OTMxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
