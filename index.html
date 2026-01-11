@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-pt-32">
 
 <head>
     <meta charset="UTF-8">
@@ -127,7 +127,7 @@
 
 </head>
 
-<body>
+<body class="scroll-pt-32">
 
     <!-- Premium Neon Background Layer -->
     <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -172,10 +172,38 @@
 
                 <!-- DESKTOP MENU -->
                 <ul class="hidden lg:flex gap-8 text-gray-300">
-                    <li class="hover:text-accent font-bold text-lg "><a href="#">Home</a></li>
-                    <li class="hover:text-accent font-bold text-lg"><a href="#">Skills</a></li>
-                    <li class="hover:text-accent font-bold text-lg"><a href="#">Projects</a></li>
-                    <li class="hover:text-accent font-bold text-lg"><a href="#">Experience</a></li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#heroSection">Home</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+
+                    </li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#skills">Skills</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#projects">Projects</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#work&exprience">Experience</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#certificates">Certificates</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="hover:text-white font-bold text-lg relative group ">
+                        <a href="#testimonials">Testimonials</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+
                 </ul>
 
                 <!-- DESKTOP BUTTON -->
@@ -220,24 +248,53 @@
                     bg-white/5 backdrop-blur-xl
                     rounded-b-xl">
 
-                <ul class="flex flex-col items-center gap-6 py-6 text-gray-300">
-                    <li class="hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center">
-                        <a href="#">Home</a>
+                <ul class="flex flex-col items-center text-gray-300">
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#heroSection" class="w-full py-2 active:scale-95 transition">Home</a>
+                        <span
+                            class="absolute left-1/2 -bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-transform duration-200 group-active:scale-x-100">
+                        </span>
+
                     </li>
-                    <li class="hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center">
-                        <a href="#">Skills</a>
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#skills" class="w-full py-2">Skills</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li class="hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center">
-                        <a href="#">Projects</a>
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#projects" class="w-full py-2">Projects</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li class="hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center">
-                        <a href="#">Experience</a>
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#work&exprience" class="w-full py-2">Experience</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li class="hover:text-accent text-lg font-bold border-white/30 w-full text-center">
-                        <a href="#contact">
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#certificates" class="w-full py-2">Certificate</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group ">
+                        <a href="#testimonials" class="w-full py-2">Testimonials</a>
+                        <span
+                            class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li
+                        class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 w-full text-center relative group ">
+                        <a href="#contact" class="w-full py-4.5">
 
                             Hire Me
                         </a>
+                        <span
+                            class="absolute left-0  rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                     </li>
                 </ul>
             </div>
@@ -308,7 +365,7 @@
     </section>
 
     <!-- skils section -->
-    <section class="pt-8 ">
+    <section class="pt-8 " id="skills">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-center ">
             Skills & <span class="text-cyan-400">Technologies</span>
         </h2>
@@ -442,7 +499,7 @@
     </section>
 
     <!-- project section -->
-    <section class="relative py-5 ">
+    <section class="relative py-5 " id="projects">
         <div class="max-w-7xl mx-auto px-6">
 
             <!-- Section Heading -->
@@ -1116,7 +1173,7 @@
 
     <!--  work & Experience-->
 
-    <section class="max-w-7xl mx-auto px-6 py-5">
+    <section class="max-w-7xl mx-auto px-6 py-5" id="work&exprience">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-centerfont-bold text-center text-white mb-16">
             Work <span class="text-cyan-400">Experience</span>
         </h2>
@@ -1269,7 +1326,8 @@
 
     <!-- Certificates section -->
 
-    <section class="relative py-20 bg-gradient-to-br from-[#050816] via-[#0b1120] to-[#020617] text-white">
+    <section id="certificates"
+        class="relative py-20 bg-gradient-to-br from-[#050816] via-[#0b1120] to-[#020617] text-white">
 
         <!-- Section Heading -->
         <div class="max-w-7xl mx-auto px-6 text-center mb-16">
@@ -1571,7 +1629,7 @@
     </section>
 
     <!-- ================= TESTIMONIALS ================= -->
-    <section class="relative py-20 text-white">
+    <section class="relative py-20 text-white" id="testimonials">
 
         <!-- Background Glow -->
         <div class="pointer-events-none absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full"></div>
@@ -1847,8 +1905,7 @@
                 <div class="relative">
 
                     <!-- Neon Border -->
-                    <div
-                        class="absolute inset-0 rounded-3xl  blur opacity-40">
+                    <div class="absolute inset-0 rounded-3xl  blur opacity-40">
                     </div>
 
                     <!-- Glass Card -->
