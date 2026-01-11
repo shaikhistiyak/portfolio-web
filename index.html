@@ -26,15 +26,38 @@
             --blur-glass: 24px;
             /*...*/
         }
+        @layer utilities {
+    @keyframes pulseSlow {
+        0%, 100% {
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .animate-pulseSlow {
+        animation: pulseSlow 10s ease-in-out infinite;
+    }
+
+    .delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
     </style>
     <style>
         body {
             background: linear-gradient(-45deg,
-                    #0b1020,
+                    #050816,
+                    #0b1120,
                     #1a1f4d,
-                    #0f3460,
-                    #1b103f,
-                    #0b1020);
+                    #0974f1,
+                    #22d3ee);
             background-size: 400% 400%;
             animation: gradientMove 10s linear infinite;
         }
@@ -105,15 +128,33 @@
 </head>
 
 <body>
-    <!-- animation -->
-    <div class="fixed inset-0 -z-10 transition duration-300 ease-in-out ">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.18),transparent_40%)]">
+
+    <!-- Premium Neon Background Layer -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+
+        <!-- Base Dark Layer -->
+        <div class="absolute inset-0 bg-transparent"></div>
+
+        <!-- Indigo Glow (Top Left) -->
+        <div class="absolute inset-0
+        bg-[radial-gradient(circle_at_15%_20%,rgba(99,102,241,0.20),transparent_42%)]
+        animate-pulseSlow">
         </div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_60%,rgba(236,72,153,0.15),transparent_45%)]">
+
+        <!-- Purple Glow (Top Right) -->
+        <div class="absolute inset-0
+        bg-[radial-gradient(circle_at_85%_25%,rgba(168,85,247,0.18),transparent_45%)]
+        animate-pulseSlow delay-2000">
         </div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(34,211,238,0.12),transparent_45%)]">
+
+        <!-- Cyan Glow (Bottom Center) -->
+        <div class="absolute inset-0
+        bg-[radial-gradient(circle_at_50%_85%,rgba(34,211,238,0.16),transparent_48%)]
+        animate-pulseSlow delay-4000">
         </div>
+
     </div>
+
     <!-- header  -->
     <header class="flex justify-center ">
         <nav class="fixed top-5 w-5/6 z-50
@@ -276,7 +317,7 @@
 
             <!-- Skill Card -->
             <div
-                class="relative flex items-center justify-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -287,7 +328,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -298,7 +339,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -309,7 +350,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
                     class="w-10 h-10" loading="lazy" decoding="async" />
                 <div>
@@ -320,7 +361,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                     class="w-10 h-10" loading="lazy" decoding="async" />
                 <div>
@@ -331,7 +372,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -342,7 +383,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
                     class="w-10 h-10" loading="lazy" decoding="async" />
                 <div>
@@ -353,7 +394,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -364,7 +405,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                     class="w-10 h-10" loading="lazy" decoding="async" />
                 <div>
@@ -375,7 +416,7 @@
             </div>
 
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
                     class="w-10 h-10" loading="lazy" decoding="async" />
                 <div>
@@ -387,7 +428,7 @@
 
             <!-- Center React -->
             <div
-                class="relative flex items-center gap-3 px-6 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
+                class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 h-10"
                     loading="lazy" decoding="async" />
                 <div>
@@ -1893,7 +1934,7 @@
     </section>
 
     <!-- SUCCESS TOAST -->
-    <div id="toast" class="fixed top-6 right-6 z-50 hidden items-center gap-3 px-6 py-4 rounded-xl
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-6 py-4 rounded-xl
            bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-medium
            shadow-[0_0_40px_rgba(34,211,238,0.6)]
            animate-toast-in">
@@ -2073,7 +2114,7 @@
         });
 
     </script>
-    
+
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
 </body>
