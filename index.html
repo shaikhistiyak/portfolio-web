@@ -115,6 +115,12 @@
       .animate-toast-out {
         animation: toast-out 0.5s ease-in forwards;
       }
+       #testimonials ::-webkit-scrollbar {
+    display: none;
+  }
+  #testimonials {
+    scrollbar-width: none;
+  }
 
       /* Chrome autofill fix */
       input:-webkit-autofill,
@@ -163,37 +169,37 @@
 
           <!-- DESKTOP MENU -->
           <ul class="hidden lg:flex gap-8 text-white">
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#heroSection">Home</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
               ></span>
             </li>
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#skills">Skills</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
               ></span>
             </li>
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#projects">Projects</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
               ></span>
             </li>
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#work&exprience">Experience</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
               ></span>
             </li>
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#certificates">Certificates</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
               ></span>
             </li>
-            <li class="hover:text-gray-300 font-bold text-lg relative group">
+            <li class="hover:text-cyan-300 font-bold text-lg relative group">
               <a href="#testimonials">Testimonials</a>
               <span
                 class="absolute left-0 -bottom-2 rounded-full w-0 h-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"
@@ -263,66 +269,77 @@
         >
           <ul class="flex flex-col items-center text-white">
             <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
             >
               <a
                 href="#heroSection"
                 class="w-full py-2 active:scale-95 transition-all"
-                >Home</a
-              >
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              >
+                >Home
+                 <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
               </span>
+            </a>
+             
             </li>
             <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
             >
-              <a href="#skills" class="w-full py-2">Skills</a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              ></span>
-            </li>
-            <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
-            >
-              <a href="#projects" class="w-full py-2">Projects</a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              ></span>
-            </li>
-            <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
-            >
-              <a href="#work&exprience" class="w-full py-2">Experience</a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              ></span>
-            </li>
-            <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
-            >
-              <a href="#certificates" class="w-full py-2">Certificate</a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              ></span>
-            </li>
-            <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
-            >
-              <a href="#testimonials" class="w-full py-2">Testimonials</a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              ></span>
-            </li>
-            <li
-              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 w-full text-center relative group"
-            >
-              <a href="#contact" class="w-full py-4.5"> Open for Work </a>
-              <span
-                class="absolute left-1/2 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
-              >
+              <a href="#skills" class="w-full py-2">Skills
+                 <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
               </span>
+              </a>
+              
+            </li>
+            <li
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+            >
+              <a href="#projects" class="w-full py-2">Projects
+                <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
+              </span>
+              </a>
+              
+            </li>
+            <li
+              class="flex items-center justify-center hover:text-accent text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+            >
+              <a href="#work&exprience" class="w-full py-2">Experience
+                <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
+              </span>
+              </a>
+             
+            </li>
+            <li
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+            >
+              <a href="#certificates" class="w-full py-2">Certificate
+               <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
+              </span>
+              </a>
+             
+            </li>
+            <li
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 border-b-2 py-2 w-full text-center relative group"
+            >
+              <a href="#testimonials" class="w-full py-2">Testimonials
+                <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
+              </span>
+              </a>
+              
+            </li>
+            <li
+              class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 w-full text-center relative group"
+            >
+              <a href="#contact" class="w-full py-4.5"> Open for Work
+                <span
+                class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100">
+              </span>
+             </a>
+          
             </li>
           </ul>
         </div>
@@ -357,6 +374,7 @@
           >
             <a
               class="px-6 py-3 rounded-lg font-bold text-lg border bg-cyan-500 text-black border-cyan-400/30 hover:bg-cyan-500/20 hover:text-cyan-300 cursor-pointer transition-all duration-300 ease-in-out sm:mb-0 mb-4 px-12 flex items-center"
+              href="#projects"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -414,15 +432,29 @@
 
     <!-- skils section -->
     <section class="pt-8" id="skills">
-      <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
-        Skills &
-        <span
-          class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
-          >Technologies</span
-        >
-      </h2>
+      <div class="relative text-center ">
 
-      <div class="flex flex-wrap justify-center gap-3 p-5">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
+          Skills &
+          <span
+            class="text-cyan-400 hover:text-purple-500 transition duration-300 ease-in-out"
+            >Technologies</span
+          >
+        </h2>
+          <!-- Image-style gradient border -->
+          <div class="mx-auto mt-4 h-[2px] w-full
+                      bg-gradient-to-r from-transparent via-cyan-400 to-transparent">
+          </div>
+
+          <!-- Glowing border -->
+          <div class="mx-auto  h-[10px] -mt-1 w-50 md:w-80 
+                      bg-cyan-500
+                      blur-sm
+                      shadow-[0_0_25px_rgba(34,211,238,0.9)]">
+          </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 p-2 lg:p-5">
         <!-- Skill Card -->
         <div
           class="relative flex items-center justify-center gap-3 px-4 py-3 rounded-[1rem] overflow-hidden bg-black text-white shadow-lg mt-4 cursor-pointer"
@@ -634,7 +666,7 @@
         >
           My
           <span
-            class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
+            class="text-cyan-400 hover:text-purple-500 transition duration-300 ease-in-out"
             >Projects</span
           >
         </h2>
@@ -770,7 +802,7 @@
               <h3 class="text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
-              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+              <p class="text-sm text-white leading-relaxed mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
               </p>
@@ -984,7 +1016,7 @@
               <h3 class="text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
-              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+              <p class="text-sm text-white leading-relaxed mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
               </p>
@@ -1199,7 +1231,7 @@
               <h3 class="text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
-              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+              <p class="text-sm text-white leading-relaxed mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
               </p>
@@ -1414,7 +1446,7 @@
               <h3 class="text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
-              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+              <p class="text-sm text-white leading-relaxed mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
               </p>
@@ -1513,7 +1545,7 @@
       >
         Work
         <span
-          class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
+          class="text-cyan-400 hover:text-purple-500  transition duration-300 ease-in-out"
           >Experience</span
         >
       </h2>
@@ -1660,8 +1692,8 @@
               </div>
 
               <div class="mt-6 flex justify-between text-sm text-white/60">
-                <span>Jan 2023<br />Joining</span>
-                <span>Dec 2024 <br />Resign</span>
+                <span>Jan 2023<br />Joining Date</span>
+                <span>Dec 2024 <br />End Date</span>
               </div>
             </div>
           </div>
@@ -1703,8 +1735,8 @@
               </div>
 
               <div class="mt-6 flex justify-between text-sm text-white/60">
-                <span>Aug 2021 <br />Joining</span>
-                <span>Dec 2022 <br />Resign</span>
+                <span>Aug 2021 <br />Joining Date</span>
+                <span>Dec 2022 <br />End Date</span>
               </div>
             </div>
           </div>
@@ -1725,7 +1757,7 @@
         >
           My
           <span
-            class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
+            class="text-cyan-400 hover:text-purple-500 transition duration-300 ease-in-out"
             >Certificates</span
           >
         </h2>
@@ -2117,7 +2149,7 @@
         >
           Student
           <span
-            class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
+            class="text-cyan-400 hover:text-purple-500  transition duration-300 ease-in-out"
             >Testimonials</span
           >
         </h2>
@@ -2127,13 +2159,26 @@
       </div>
 
       <!-- VIEWPORT -->
-      <div class="relative overflow-x-hidden overflow-y-visible pt-10">
+      <div
+      class="relative overflow-x-auto overflow-y-visible pt-10
+            touch-pan-x
+            overscroll-x-contain
+            scroll-smooth
+            [-webkit-overflow-scrolling:touch]"
+    >
+
         <!-- TRACK -->
-        <div id="testimonial-track" class="flex gap-8 will-change-">
+              <div
+        id="testimonial-track"
+        class="flex gap-8
+              snap-x snap-mandatory
+              min-w-max
+              px-6"
+      >
+
           <!-- CARD -->
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+         <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2158,9 +2203,8 @@
               approach made everything clear.
             </p>
           </div>
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(34,211,238,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+        <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2182,9 +2226,8 @@
               Learned Photoshop, CorelDraw, Illustrator, Canva & real projects.
             </p>
           </div>
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(236,72,153,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+         <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2207,9 +2250,8 @@
             </p>
           </div>
           <!-- CARD -->
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+          <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2234,9 +2276,8 @@
               approach made everything clear.
             </p>
           </div>
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(34,211,238,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+          <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2258,9 +2299,8 @@
               Learned Photoshop, CorelDraw, Illustrator, Canva & real projects.
             </p>
           </div>
-          <div
-            class="testimonial-card w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(236,72,153,0.35)] transition-all duration-500 hover:-translate-y-3"
-          >
+          <div class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3">
+
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
             ></div>
@@ -2307,7 +2347,7 @@
           >
             Get In
             <span
-              class="text-cyan-400 hover:text-cyan-400/20 transition duration-300 ease-in-out"
+              class="text-cyan-400 hover:text-purple-500 transition duration-300 ease-in-out"
               >Touch</span
             >
           </h2>
@@ -2320,7 +2360,7 @@
         <!-- Main Grid -->
         <div class="grid lg:grid-cols-2 gap-14 items-center">
           <!-- LEFT INFO -->
-          <div class="space-y-8 self-start order-2 lg:order-1">
+          <div class="space-y-8 self-start">
             <div class="space-y-3">
               <h3 class="text-2xl font-semibold">Let’s Talk 👋</h3>
               <p class="text-gray-400">
@@ -2399,7 +2439,7 @@
           </div>
 
           <!-- RIGHT FORM -->
-          <div class="relative order-1 lg:order-2">
+          <div class="relative">
             <!-- Neon Border -->
             <div class="absolute inset-0 rounded-3xl blur opacity-40"></div>
 
