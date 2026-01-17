@@ -133,7 +133,7 @@
     </style>
   </head>
 
-  <body class="scroll-pt-32">
+  <body>
     <!-- Premium Neon Background Layer -->
     <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       <!-- Base Dark Layer -->
@@ -345,7 +345,7 @@
         </div>
       </nav>
     </header>
-
+    
     <!-- hero section -->
     <section
       id="heroSection"
@@ -447,10 +447,11 @@
           </div>
 
           <!-- Glowing border -->
-          <div class="mx-auto  h-[10px] -mt-1 w-50 md:w-80 
+          <!-- <div class="mx-auto  h-[10px] -mt-1 w-50 md:w-80 
                       bg-cyan-500
                       blur-sm
-                      shadow-[0_0_25px_rgba(34,211,238,0.9)]">
+                      shadow-[0_0_25px_rgba(34,211,238,0.9)]"> -->
+          <div class="relative mx-auto -mt-1 w-70 h-10 -mt-5 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"> </div>
           </div>
       </div>
 
@@ -2160,11 +2161,9 @@
 
       <!-- VIEWPORT -->
       <div
-      class="relative overflow-x-auto overflow-y-visible pt-10
-            touch-pan-x
-            overscroll-x-contain
-            scroll-smooth
-            [-webkit-overflow-scrolling:touch]"
+ class="relative overflow-x-hidden overflow-y-visible pt-10
+         touch-pan-y
+         select-none"
     >
 
         <!-- TRACK -->
@@ -2617,16 +2616,58 @@
     <script>
       const track = document.getElementById("testimonial-track");
 
-      let speed = 0.5; // scroll speed
+      let speed = 1;
       let posX = 0;
       let isPaused = false;
 
-      // Pause on hover (track + cards)
+      // touch drag vars
+      let startX = 0;
+      let lastX = 0;
+      let isDragging = false;
+
+      // Desktop hover pause
       track.addEventListener("mouseenter", () => (isPaused = true));
       track.addEventListener("mouseleave", () => (isPaused = false));
 
+      /* ===============================
+        TOUCH / DRAG SUPPORT
+      =============================== */
+
+      track.addEventListener("touchstart", (e) => {
+        isPaused = true;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        lastX = startX;
+      }, { passive: true });
+
+      track.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+
+        const currentX = e.touches[0].clientX;
+        const delta = currentX - lastX;
+
+        posX += delta;          // move track with finger
+        lastX = currentX;
+
+        track.style.transform = `translateX(${posX}px)`;
+      }, { passive: true });
+
+      track.addEventListener("touchend", () => {
+        isDragging = false;
+        isPaused = false;
+      });
+
+      track.addEventListener("touchcancel", () => {
+        isDragging = false;
+        isPaused = false;
+      });
+
+      /* ===============================
+        AUTO SCROLL + INFINITE LOOP
+      =============================== */
+
       function animate() {
-        if (!isPaused) {
+        if (!isPaused && !isDragging) {
           posX -= speed;
 
           const firstCard = track.children[0];
