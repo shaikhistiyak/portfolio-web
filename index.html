@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-pt-32">
   <head>
     <meta charset="UTF-8" />
@@ -62,6 +62,7 @@
         );
         background-size: 400% 400%;
         animation: gradientMove 10s linear infinite;
+        overflow-x: hidden;
       }
 
       @keyframes gradientMove {
@@ -130,6 +131,16 @@
         -webkit-text-fill-color: white !important;
         transition-all: background-color 9999s ease-in-out 0s;
       }
+
+      @media (max-width: 640px) {
+        .section-glow {
+          width: 12rem;
+        }
+
+        .testimonial-card {
+          width: min(85vw, 340px);
+        }
+      }
     </style>
   </head>
 
@@ -158,12 +169,12 @@
     <!-- header  -->
     <header class="flex justify-center">
       <nav
-        class="fixed top-5 w-5/6 z-50 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl transition-all duration-300 ease-in-out"
+        class="fixed top-4 sm:top-5 w-[calc(100%-1.5rem)] max-w-7xl z-50 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl transition-all duration-300 ease-in-out"
       >
         <!-- TOP BAR -->
-        <div class="px-6 py-4 flex justify-between items-center">
+        <div class="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-4">
           <!-- LOGO -->
-          <div class="text-2xl font-bold text-white cursor-pointer">
+          <div class="text-lg sm:text-2xl font-bold text-white cursor-pointer leading-tight">
             &lt;Istiyak Shaikh/&gt;
           </div>
 
@@ -231,7 +242,7 @@
           </a>
 
           <!-- MOBILE TOGGLE -->
-          <button id="menuBtn" class="lg:hidden text-white">
+          <button id="menuBtn" class="lg:hidden text-white p-1">
             <svg
               id="menuIcon"
               class="size-8"
@@ -339,7 +350,7 @@
             <li
               class="flex items-center justify-center hover:text-cyan-300 text-lg font-bold border-white/30 w-full text-center relative group"
             >
-              <a href="#contact" class="w-full py-4.5">
+              <a href="#contact" class="w-full py-4">
                 Open for Work
                 <span
                   class="absolute left-1/2 bottom-1 -translate-x-1/2 h-[4px] w-10 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 scale-x-0 transition-all-transform duration-200 group-active:scale-x-100"
@@ -355,31 +366,31 @@
     <!-- hero section -->
     <section
       id="heroSection"
-      class="mt-24 text-white transition-all duration-300 ease-in-out"
+      class="mt-28 sm:mt-24 text-white transition-all duration-300 ease-in-out"
     >
       <div
-        class="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row gap-12 items-center"
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-12 items-center"
       >
         <!-- Left Content -->
-        <div class="lg:text-left text-center px-10 lg:px-0">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        <div class="w-full lg:text-left text-center px-1 sm:px-4 lg:px-0">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
             Hi, I'm <span class="text-secoundry">Istiyak Shaikh</span> 👋🏻
           </h1>
 
-          <p class="mt-4 text-white-300 text-2xl md:text-3xl font-bold">
+          <p class="mt-4 text-white-300 text-xl sm:text-2xl md:text-3xl font-bold">
             Full Stack Developer • Cyber Security Enthusiast
           </p>
 
-          <p class="mt-4 text-white-400 text-xl md:text-2xl">
+          <p class="mt-4 text-white-400 text-base sm:text-lg md:text-2xl">
             I build scalable web apps, secure systems, and beautiful digital
             experiences.
           </p>
 
           <div
-            class="mt-8 flex justify-center lg:justify-start gap-4 sm:flex-row flex-wrap"
+            class="mt-8 flex justify-center lg:justify-start gap-4 flex-col sm:flex-row flex-wrap"
           >
             <a
-              class="px-6 py-3 rounded-lg font-bold text-lg border bg-cyan-500 text-black border-cyan-400/30 hover:bg-cyan-500/20 hover:text-cyan-300 cursor-pointer transition-all duration-300 ease-in-out sm:mb-0 mb-4 px-12 flex items-center"
+              class="w-full sm:w-auto justify-center px-6 py-3 rounded-lg font-bold text-base sm:text-lg border bg-cyan-500 text-black border-cyan-400/30 hover:bg-cyan-500/20 hover:text-cyan-300 cursor-pointer transition-all duration-300 ease-in-out sm:mb-0 flex items-center sm:px-12"
               href="#projects"
             >
               <svg
@@ -398,7 +409,7 @@
               View Projects
             </a>
             <a
-              class="px-6 py-3 rounded-lg font-bold text-lg border bg-purple-500 text-white text-purple-300 border border-purple-400/30 hover:bg-purple-500/20 hover:text-white cursor-pointer flex items-center transition-all duration-300 ease-in-out"
+              class="w-full sm:w-auto justify-center px-6 py-3 rounded-lg font-bold text-base sm:text-lg border bg-purple-500 text-white text-purple-300 border border-purple-400/30 hover:bg-purple-500/20 hover:text-white cursor-pointer flex items-center transition-all duration-300 ease-in-out"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -424,13 +435,13 @@
         </div>
 
         <!-- Right Image -->
-        <div class="relative">
+        <div class="relative w-full max-w-[16rem] sm:max-w-sm md:max-w-md lg:max-w-xl">
           <img
             src="./profile-removebg-preview.png"
             alt="Profile"
             fetchpriority="high"
             decoding="async"
-            class="select-none"
+            class="select-none w-full h-auto"
           />
         </div>
       </div>
@@ -453,7 +464,7 @@
 
         <!-- Glowing border -->
         <div
-          class="relative mx-auto -mt-1 w-70 h-10 -mt-5 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
+          class="section-glow relative mx-auto -mt-5 h-10 w-60 sm:w-70 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
         ></div>
       </div>
 
@@ -661,8 +672,8 @@
     </section>
 
     <!-- project section -->
-    <section class="relative py-5" id="projects">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="relative py-8 sm:py-5" id="projects">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <!-- Section Heading -->
         <div class="relative text-center mb-4 lg:mb-8">
           <h2 class="text-3xl md:text-4xl font-bold text-white">
@@ -684,7 +695,7 @@
         </div>
 
         <!-- Project Cards Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
           <!-- Project Card -->
           <div
             class="group relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.25)] transition-all duration-500"
@@ -811,7 +822,7 @@
             <!-- Content -->
             <div class="p-6">
               <!-- Project Name -->
-              <h3 class="text-2xl font-bold text-white">Project Name</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
               <p class="text-sm text-white leading-relaxed mb-4">
@@ -1025,7 +1036,7 @@
             <!-- Content -->
             <div class="p-6">
               <!-- Project Name -->
-              <h3 class="text-2xl font-bold text-white">Project Name</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
               <p class="text-sm text-white leading-relaxed mb-4">
@@ -1240,7 +1251,7 @@
             <!-- Content -->
             <div class="p-6">
               <!-- Project Name -->
-              <h3 class="text-2xl font-bold text-white">Project Name</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
               <p class="text-sm text-white leading-relaxed mb-4">
@@ -1455,7 +1466,7 @@
             <!-- Content -->
             <div class="p-6">
               <!-- Project Name -->
-              <h3 class="text-2xl font-bold text-white">Project Name</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Project Name</h3>
 
               <!-- Description -->
               <p class="text-sm text-white leading-relaxed mb-4">
@@ -1551,7 +1562,7 @@
 
     <!--  work & Experience-->
 
-    <section class="max-w-7xl mx-auto px-6 py-5" id="work&exprience">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-5" id="work&exprience">
       <div class="relative text-center mb-4 lg:mb-8">
         <h2 class="text-3xl md:text-4xl font-bold text-white">
           Work
@@ -1567,12 +1578,12 @@
 
         <!-- Glowing border -->
         <div
-          class="relative mx-auto -mt-1 w-70 h-10 -mt-5 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
+          class="section-glow relative mx-auto -mt-5 h-10 w-60 sm:w-70 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
         ></div>
       </div>
 
       <!-- GRID -->
-      <div class="grid lg:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
         <!-- ================= CARD 1 ================= -->
         <div
           class="group relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_45px_rgba(34,211,238,0.15)] hover:shadow-[0_0_80px_rgba(139,92,246,0.45)] transition-all duration-500"
@@ -1582,14 +1593,14 @@
             class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 blur-3xl transition-all"
           ></div>
 
-          <div class="relative grid md:grid-cols-2 gap-6 p-6">
+          <div class="relative grid md:grid-cols-2 gap-6 p-4 sm:p-6">
             <!-- FLOWBITE CAROUSEL -->
             <div
               class="relative rounded-2xl overflow-hidden border border-white/10"
             >
               <div
                 id="experience-carousel-1"
-                class="relative w-full h-56 sm:h-64 lg:h-72"
+                class="relative w-full h-52 sm:h-64 lg:h-72"
                 data-carousel="slide"
                 data-carousel-interval="4500"
               >
@@ -1660,7 +1671,7 @@
                 <!-- Prev Button -->
                 <button
                   data-carousel-prev
-                  class="absolute top-1/2 left-3 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/40 backdrop-blur flex items-center justify-center hover:bg-white/60 transition-all"
+                  class="absolute top-1/2 left-3 -translate-y-1/2 z-30 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/40 backdrop-blur flex items-center justify-center hover:bg-white/60 transition-all"
                 >
                   <svg
                     class="w-5 h-5 text-white"
@@ -1680,7 +1691,7 @@
                 <!-- Next Button -->
                 <button
                   data-carousel-next
-                  class="absolute top-1/2 right-3 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/40 backdrop-blur flex items-center justify-center hover:bg-white/60 transition-all"
+                  class="absolute top-1/2 right-3 -translate-y-1/2 z-30 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/40 backdrop-blur flex items-center justify-center hover:bg-white/60 transition-all"
                 >
                   <svg
                     class="w-5 h-5 text-white"
@@ -1728,14 +1739,14 @@
             class="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/30 via-cyan-500/30 to-blue-500/30 opacity-0 group-hover:opacity-100 blur-3xl transition-all"
           ></div>
 
-          <div class="relative grid md:grid-cols-2 gap-6 p-6">
+          <div class="relative grid md:grid-cols-2 gap-6 p-4 sm:p-6">
             <!-- Image -->
             <div
               class="relative rounded-2xl overflow-hidden border border-white/10"
             >
               <img
                 src="./ref/file_000000009fd47209b4be94085dae2118.png"
-                class="w-full h-56 sm:h-64 lg:h-72 object-cover group-hover:scale-105 transition-all-transform duration-700"
+                class="w-full h-52 sm:h-64 lg:h-72 object-cover group-hover:scale-105 transition-all-transform duration-700"
                 loading="lazy"
                 decoding="async"
                 alt=""
@@ -1769,10 +1780,10 @@
 
     <section
       id="certificates"
-      class="relative py-20 bg-gradient-to-br from-[#050816] via-[#0b1120] to-[#020617] text-white"
+      class="relative py-16 sm:py-20 bg-gradient-to-br from-[#050816] via-[#0b1120] to-[#020617] text-white"
     >
       <!-- Section Heading -->
-      <div class="max-w-7xl mx-auto px-6 text-center mb-4 lg:mb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-4 lg:mb-8">
         <div class="relative text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white">
             My
@@ -2131,7 +2142,7 @@
             >
               <!-- Header -->
               <div
-                class="flex justify-between items-center px-6 py-4 border-b border-white/10"
+                class="flex justify-between items-center gap-4 px-4 sm:px-6 py-4 border-b border-white/10"
               >
                 <h3
                   id="modal-title"
@@ -2149,12 +2160,12 @@
               </div>
 
               <!-- Body -->
-              <div class="p-6 flex justify-center items-center">
+              <div class="p-4 sm:p-6 flex justify-center items-center">
                 <img
                   id="modal-image"
                   src=""
                   alt="Certificate Full View"
-                  class="max-h-[75vh] w-auto rounded-xl object-contain shadow-[0_0_40px_rgba(139,92,246,0.3)] transition-all duration-500 hover:scale-[1.02]"
+                  class="max-h-[75vh] w-full rounded-xl object-contain shadow-[0_0_40px_rgba(139,92,246,0.3)] transition-all duration-500 hover:scale-[1.02]"
                 />
               </div>
             </div>
@@ -2164,7 +2175,7 @@
     </section>
 
     <!-- ================= TESTIMONIALS ================= -->
-    <section class="relative py-20 text-white" id="testimonials">
+    <section class="relative py-16 sm:py-20 text-white" id="testimonials">
       <!-- Background Glow -->
       <div
         class="pointer-events-none absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full"
@@ -2189,7 +2200,7 @@
 
         <!-- Glowing border -->
         <div
-          class="relative mx-auto -mt-1 w-70 h-10 -mt-5 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
+          class="section-glow relative mx-auto -mt-5 h-10 w-60 sm:w-70 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
         ></div>
 
         <p class="text-gray-400 max-w-xl mx-auto">
@@ -2199,16 +2210,16 @@
 
       <!-- VIEWPORT -->
       <div
-        class="relative overflow-x-hidden overflow-y-visible pt-10 touch-pan-y select-none"
+        class="relative overflow-x-hidden overflow-y-visible pt-8 sm:pt-10 touch-pan-y select-none"
       >
         <!-- TRACK -->
         <div
           id="testimonial-track"
-          class="flex gap-8 snap-x snap-mandatory min-w-max px-6"
+          class="flex gap-5 sm:gap-8 snap-x snap-mandatory min-w-max px-4 sm:px-6"
         >
           <!-- CARD -->
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2235,7 +2246,7 @@
             </p>
           </div>
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2259,7 +2270,7 @@
             </p>
           </div>
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2284,7 +2295,7 @@
           </div>
           <!-- CARD -->
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2311,7 +2322,7 @@
             </p>
           </div>
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2335,7 +2346,7 @@
             </p>
           </div>
           <div
-            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
+            class="testimonial-card snap-center w-[340px] shrink-0 group relative z-0 hover:z-30 rounded-3xl p-5 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(0,255,255,0.08)] hover:shadow-[0_0_60px_rgba(139,92,246,0.35)] transition-all duration-500 hover:-translate-y-3"
           >
             <div
               class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-all"
@@ -2365,7 +2376,7 @@
     <!-- CONTACT SECTION -->
     <section
       id="contact"
-      class="relative py-5 bg-[#050816] text-white overflow-hidden"
+      class="relative py-8 sm:py-5 bg-[#050816] text-white overflow-hidden"
     >
       <!-- Background Glow -->
       <div
@@ -2375,7 +2386,7 @@
         class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full"
       ></div>
 
-      <div class="relative max-w-7xl mx-auto px-6">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
         <!-- Heading -->
         <div class="relative text-center mb-4 lg:mb-8 pt-8">
           <h2 class="text-3xl md:text-4xl font-bold text-white">
@@ -2392,7 +2403,7 @@
 
           <!-- Glowing border -->
           <div
-            class="relative mx-auto -mt-1 w-50 h-10 -mt-5 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
+          class="section-glow relative mx-auto -mt-5 h-10 w-48 sm:w-50 bg-cyan-500 blur-lg opacity-80 rounded-[100%_100%] scale-y-50"
           ></div>
           <p class="text-gray-400 max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? Let’s build
@@ -2401,9 +2412,9 @@
         </div>
 
         <!-- Main Grid -->
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
           <!-- LEFT INFO -->
-          <div class="space-y-8 lg:text-left text-center self-start">
+          <div class="space-y-6 sm:space-y-8 lg:text-left text-center self-start">
             <div class="space-y-3">
               <h3 class="text-2xl font-semibold">Let’s Talk 👋</h3>
               <p class="text-gray-400">
@@ -2415,7 +2426,7 @@
             <!-- Info Cards -->
             <div class="space-y-4">
               <a
-                class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-cyan-400/50 transition-all"
+                class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-cyan-400/50 transition-all"
                 href="mailto:shaikhistiyak235@gmail.com"
               >
                 <span class="text-cyan-400 text-xl">
@@ -2433,11 +2444,11 @@
                     />
                   </svg>
                 </span>
-                <span class="text-gray-300">shaikhistiyak235@gmail.com</span>
+                <span class="text-gray-300 break-all text-center sm:text-left">shaikhistiyak235@gmail.com</span>
               </a>
 
               <a
-                class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-purple-400/50 transition-all"
+                class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-purple-400/50 transition-all"
                 href="tel:+918320878027"
               >
                 <span class="text-purple-400 text-xl">
@@ -2459,7 +2470,7 @@
                     />
                   </svg>
                 </span>
-                <span class="text-gray-300">+91 8320878027</span>
+                <span class="text-gray-300 text-center sm:text-left">+91 8320878027</span>
               </a>
             </div>
 
@@ -2472,7 +2483,7 @@
 
             <!-- Glass Card -->
             <form
-              class="relative p-8 md:p-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 space-y-6"
+              class="relative p-5 sm:p-8 md:p-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 space-y-6"
               action="#"
               method="post"
             >
@@ -2568,7 +2579,7 @@
     <!-- SUCCESS TOAST -->
     <div
       id="toast"
-      class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-medium shadow-[0_0_40px_rgba(34,211,238,0.6)] animate-toast-in"
+      class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 hidden items-center justify-center gap-3 px-4 sm:px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-medium shadow-[0_0_40px_rgba(34,211,238,0.6)] animate-toast-in"
     >
       ✅ Message sent successfully!
     </div>
@@ -2729,24 +2740,15 @@
       const mobileMenu = document.getElementById("mobileMenu");
       const menuIcon = document.getElementById("menuIcon");
       const closeIcon = document.getElementById("closeIcon");
-      const heroSection = document.getElementById("heroSection");
-
       let isOpen = false;
-      let resizeTimeout;
-      window.addEventListener("resize", () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          heroSection.classList.remove("mt-[480px]");
-          heroSection.classList.add("mt-24");
-        }, 150);
-      });
 
       menuBtn.addEventListener("click", () => {
         isOpen = !isOpen;
 
         // MOBILE MENU ANIMATION
         mobileMenu.classList.toggle("max-h-0");
-        mobileMenu.classList.toggle("max-h-[500px]");
+        mobileMenu.classList.toggle("max-h-[70vh]");
+        mobileMenu.classList.toggle("overflow-y-auto");
         mobileMenu.classList.toggle("opacity-0");
         mobileMenu.classList.toggle("opacity-100");
         mobileMenu.classList.toggle("scale-95");
@@ -2755,30 +2757,19 @@
         // ICON transition-all
         menuIcon.classList.toggle("hidden");
         closeIcon.classList.toggle("hidden");
-
-        // PUSH / PULL CONTENT
-        if (isOpen) {
-          heroSection.classList.remove("mt-24");
-          heroSection.classList.add("mt-[480px]");
-        } else {
-          heroSection.classList.remove("mt-[480px]");
-          heroSection.classList.add("mt-24");
-        }
       });
       document.querySelectorAll("#mobileMenu a").forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("max-h-0", "opacity-0", "scale-95");
           mobileMenu.classList.remove(
-            "max-h-[500px]",
+            "max-h-[70vh]",
             "opacity-100",
             "scale-100",
+            "overflow-y-auto",
           );
 
           closeIcon.classList.add("hidden");
           menuIcon.classList.remove("hidden");
-
-          heroSection.classList.remove("mt-[480px]");
-          heroSection.classList.add("mt-24");
 
           isOpen = false;
         });
