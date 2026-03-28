@@ -209,12 +209,20 @@
     }
 
     /* Chrome autofill fix */
+    /* Chrome autofill fix */
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
-    textarea:-webkit-autofill {
-      -webkit-text-fill-color: white !important;
-      transition-all: background-color 9999s ease-in-out 0s;
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+      -webkit-text-fill-color: #ffffff !important;
+      caret-color: #ffffff;
+      -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+      box-shadow: 0 0 0 1000px transparent inset !important;
+      background-color: transparent !important;
+      background-clip: text !important;
+      transition: background-color 9999s ease-in-out 0s;
     }
 
     @media (max-width: 640px) {
@@ -1700,7 +1708,7 @@
 
             <!-- Info Cards -->
             <div class="space-y-4">
-              <a class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-cyan-400/50 transition-all"
+              <a class="flex sm:justify-start justify-center items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-cyan-400/50 transition-all"
                 href="mailto:shaikhistiyak235@gmail.com">
                 <span class="text-cyan-400 text-xl">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -1713,7 +1721,7 @@
                 <span class="text-gray-300 break-all text-center sm:text-left">shaikhistiyak235@gmail.com</span>
               </a>
 
-              <a class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-purple-400/50 transition-all"
+              <a class="flex sm:justify-start justify-center items-center gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-purple-400/50 transition-all"
                 href="tel:+918320878027">
                 <span class="text-purple-400 text-xl">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
